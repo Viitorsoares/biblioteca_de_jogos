@@ -1,10 +1,15 @@
 import { useState } from "react"
+import PropTypes from "prop-types"
 
-export default function NewGameForm() {
+NewGameForm.PropTypes = {
+    addGame: PropTypes.func
+}
+
+export default function NewGameForm({ addGame}) {
     const [title, setTitle] = useState("")
     const [cover, setCover] = useState("")
 
-    const handleSubmit = (ev) => {
+    const handleSubmit = (ev) => {' '
         ev.preventDefault()
         addGame({title, cover})
         setTitle("")
@@ -13,16 +18,6 @@ export default function NewGameForm() {
 
     return (
         <form onSubmit={handleSubmit}>
-            <div>
-                <label htmlFor="title">Título:</label>
-                <input
-                    type="text"
-                    name="title"
-                    id="title"
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                />
-            </div>
             <div>
                 <label htmlFor="cover">Capa:</label>
                 <input
