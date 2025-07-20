@@ -19,7 +19,9 @@ export default function App() {
               onRemove={() => removeGame(game.id)}
             />))
           : (
-          <h2 style={{margin: "4rem auto"}}>Parece que ainda não tem nada aqui, tente adicionar alguns jogos!</h2>
+          <h2 style={{margin: "4rem auto"}}>Parece que ainda não tem nada aqui, tente adicionar alguns jogos! <br />
+              OBS: Adicione o título e uma URL de capa em pdf.
+          </h2>
         )}
       </div>
     </div>
